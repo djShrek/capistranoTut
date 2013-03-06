@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require custom.modernizr.js
+//= require foundation.min
 //= require_tree .
