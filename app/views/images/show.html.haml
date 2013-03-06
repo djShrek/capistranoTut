@@ -1,10 +1,6 @@
-%p#notice= notice
+%h1= @image.title
 %p
-  %b Title:
-  = @image.title
-%p
-  %b Url:
-  = @image.url
+  = image_tag @image.url, class: 'th radius'
 = link_to 'Edit', edit_image_path(@image)
 |
 \#{link_to 'Back', images_path}
