@@ -67,10 +67,17 @@ Vagrant::Config.run do |config|
     chef.cookbooks_path = "../vagrant-config/cookbooks"
     chef.roles_path     = "../vagrant-config/roles"
     chef.data_bags_path = "../vagrant-config/data_bags"
-    chef.add_recipe "postgresql"
+    chef.add_recipe "postgresql::server"
     chef.add_recipe "nginx"
     chef.add_recipe "rbenv"
-    #chef.add_role "web"
+
+    chef.json = {
+      postgresql: {
+        password: {
+          postgres: "secret"
+        }
+      }
+    }
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
