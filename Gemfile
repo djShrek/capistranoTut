@@ -4,6 +4,7 @@ gem 'capistrano'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rails', '3.2.12'
+gem 'unicorn'
 
 group :development do
   gem 'html2haml'
