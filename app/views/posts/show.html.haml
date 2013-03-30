@@ -6,9 +6,8 @@
 %p
   %b Author:
   = @post.author
-%p
-  %b Body:
-  = @post.body
+
+= raw RDiscount.new(@post.body).to_html
 
 = link_to 'Edit', edit_post_path(@post)
 \|
