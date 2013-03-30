@@ -9,6 +9,19 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 
 server "192.168.1.93", :app, :web, :db, primary: true
 
+namespace :deploy do
+  task :start do
+    sudo "service nginx start"
+    sudo "service postgresql start"
+    run "cd #{current_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"
+  end
+  task :stop do
+    sudo "service nginx stop"
+    sudo "service postgresql stop"
+    run "kill `cat /tmp/unicorn_rails3demo.pid`"
+  end
+end
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
