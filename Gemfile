@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'capistrano'
-gem 'jquery-rails'
 gem 'haml-rails'
 gem 'rails', '3.2.12'
 gem 'unicorn'
 gem 'rdiscount'
+gem 'jquery-rails'
+gem 'pg'
 
 group :development do
   gem 'html2haml'
