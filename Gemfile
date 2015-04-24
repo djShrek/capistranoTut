@@ -6,7 +6,7 @@ gem 'rails', '3.2.12'
 gem 'unicorn'
 gem 'rdiscount'
 gem 'jquery-rails'
-gem 'pg'
+gem 'sqlite3'
 
 group :development do
   gem 'html2haml'

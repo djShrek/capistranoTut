@@ -14,5 +14,4 @@ production:
   adapter: postgresql
   database: rails3demo
   host: localhost
-  username: vagrant
   password: secret

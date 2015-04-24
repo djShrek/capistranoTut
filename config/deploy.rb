@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "rails3demo"
 set :repository,  "git://github.com/josemota/rails3demo"
 set :user, "vagrant"
@@ -7,7 +9,7 @@ set :use_sudo, false
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "192.168.1.93", :app, :web, :db, primary: true
+server "192.168.1.106", :app, :web, :db, primary: true
 
 namespace :deploy do
   task :start do
